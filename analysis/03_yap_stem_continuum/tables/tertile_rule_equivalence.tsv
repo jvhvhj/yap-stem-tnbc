@@ -1,0 +1,6 @@
+rule	mismatches_vs_frozen
+cut(quantile type=1)	0
+cut(quantile type=7)	0
+cut(sorted index n/3, 2n/3)	0
+rank(ties=first) equal thirds	0
+order() equal thirds	0

@@ -1,0 +1,5 @@
+# Historical Python versions are not fully recovered.
+# This is deliberately NOT an executable reconstruction lockfile.
+# See script_package_dependencies.tsv for imported modules.
+# The repository's static checker uses only the Python standard library.
+# Do not replace missing historical versions with latest versions and claim equivalence.

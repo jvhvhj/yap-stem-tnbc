@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite this repository and the associated manuscript."
+title: "A recurrent YAP–Stem transcriptional continuum couples to a score-independent stress-adaptive program in triple-negative breast cancer"
+type: software
+authors:
+  - family-names: "Zhang"
+    given-names: "Yuting"
+license: MIT
