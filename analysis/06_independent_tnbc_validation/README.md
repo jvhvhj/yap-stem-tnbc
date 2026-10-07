@@ -1,5 +1,32 @@
 # Independent TNBC validation
 
+## ARTEMIS six-program and Program146 associations
+
+`scripts/artemis_functional_program_associations.R` is the recovered numerical
+source for the six-program continuous associations and Program146 transfer.
+It preserves the original scientific calculations. Only the input root and
+output directory are configurable:
+
+```bash
+AHIPPO_ANALYSIS_ROOT=/path/to/analysis_workspace \
+AHIPPO_RESULTS_DIR=/path/to/new_results \
+Rscript analysis/06_independent_tnbc_validation/scripts/artemis_functional_program_associations.R
+```
+
+This script requires the existing workspace input paths declared in its `paths`
+vector, including the cancer-cell score cache, h5ad and discovery module/gene
+tables. It does not run from the small public repository alone. Do not execute it
+against the original frozen output directory.
+
+For six-program associations, each patient's Joint axis and each program score
+are separately OLS-residualized against log1p(nCount_RNA), log1p(nFeature_RNA),
+S and G2M scores. The association is Spearman correlation of ordinary residuals.
+There is no additional z-standardization or reconstruction of Joint from
+separately adjusted YAP and Stem scores. This differs from the primary
+YAP17–Stem21 model, which uses untransformed nFeature_RNA. S3 lists these models
+separately. The broad six-program memberships are not the compact spatial
+module memberships.
+
 ## Purpose
 
 Author-annotated malignant cells, patient identity and the discovery signatures.

@@ -244,3 +244,7 @@ analysis/04_program146/scripts/01_derive_program146.R	R	Seurat
 analysis/04_program146/scripts/01_derive_program146.R	R	Matrix
 analysis/04_program146/scripts/01_derive_program146.R	R	edgeR
 analysis/04_program146/scripts/01_derive_program146.R	R	DESeq2
+analysis/06_independent_tnbc_validation/scripts/artemis_functional_program_associations.R	R	data.table
+analysis/06_independent_tnbc_validation/scripts/artemis_functional_program_associations.R	R	Matrix
+analysis/06_independent_tnbc_validation/scripts/artemis_functional_program_associations.R	R	hdf5r
+analysis/06_independent_tnbc_validation/scripts/artemis_functional_program_associations.R	R	digest
