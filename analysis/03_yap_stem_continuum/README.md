@@ -68,8 +68,7 @@ with zero mismatches. That is a property of this population, not evidence about
 which code path the original authors ran; `validate_joint_state_reproduction.R`
 reports every rule it tested rather than hiding the residual ambiguity.
 
-The study-defined validation outputs are kept in
-[`tables/`](tables/state_reproduction_validation.tsv). The Joint axis is
+The study-defined validation outputs are not distributed in this code repository. The Joint axis is
 score-defining and must not be used as an outcome of itself.
 
 ## Reproduction
@@ -83,6 +82,8 @@ python tests/smoke/check_repository.py --rscript Rscript
 Each recovered script retains its original arguments and scientific parameters. Its argument parser is the execution contract; a new unified biological runner has deliberately not been substituted while source gaps remain.
 
 ## Key parameters
+
+The saved Wu forest is an extended-adjustment endpoint: its covariates include Hypoxia and UPR in addition to technical variables. It must not be labelled technical-only or substituted for the separate matched-null technical-adjustment endpoint. The source-object cohort retains CID3963 with its documented receptor-metadata discrepancy; this does not establish independently reconfirmed clinical receptor homogeneity.
 
 Random seeds, eligibility conditions, scoring expressions, model formulas and native missing-value handling remain in the recovered scripts. The script provenance index records path relocation only. Dataset-specific technical adjustments must not be replaced by a common newly invented covariate model.
 

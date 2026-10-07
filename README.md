@@ -25,7 +25,6 @@ The study does not establish a universal pan-cancer mechanism, a clinical biomar
 | `analysis/` | Scientific-question modules and recovered analysis/rendering scripts |
 | `config/` | Exact signatures and input descriptions |
 | `data/` | Data access and redistribution policy |
-| `supp/` | Supplementary table descriptions and source mapping |
 | `environment/` | Historical software records and dependencies |
 | `docs/` | Reproduction boundaries, figure/code mapping and attribution |
 | `tests/` | Static checks; not a rerun of biological results |
@@ -40,7 +39,7 @@ The [Program146 module](analysis/04_program146/README.md) now includes the recov
 
 The clinical extension uses Seo et al. (2025), NCBI SRA BioProject [PRJNA1256162](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1256162): 48 post-NAC residual-TNBC patients (D=34, ND=14), with a 45-patient operative HR-negative/HER2-negative sensitivity subset. This is an independent retrospective extreme-outcome cohort. Existing results support association with the early distant-recurrence phenotype after accounting for RCB class, not absolute recurrence-risk prediction or a validated clinical biomarker.
 
-The [clinical workflow](analysis/08_clinical_residual_tnbc/README.md) is SRA reads → Salmon → exact GENCODE v36 transcript-to-gene aggregation → Program146 scoring → clinical merge → Firth logistic regression. Existing processed clinical tables are supplied without rerunning models. Clinical software records are documented separately from single-cell/CNA environments.
+The [clinical workflow](analysis/08_clinical_residual_tnbc/README.md) is SRA reads → Salmon → exact GENCODE v36 transcript-to-gene aggregation → Program146 scoring → clinical merge → Firth logistic regression. Supplementary workbooks and processed result tables are not distributed in this code repository. Clinical software records are documented separately from single-cell/CNA environments.
 
 See [dataset access](docs/data_availability.md) and the [input manifest](config/input_manifest.tsv). Raw sequencing files, large expression matrices, Seurat objects, spatial image archives and native CNA matrices are not included. A public accession does not establish permission to redistribute every derived object or third-party resource.
 

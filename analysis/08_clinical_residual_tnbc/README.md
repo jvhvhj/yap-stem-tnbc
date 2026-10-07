@@ -4,11 +4,11 @@ This module applies Program146 to public WTS reads from Seo et al. (2025), BioPr
 
 The original study selected extreme outcomes: distant metastasis within two years of surgery for D, and no recurrence for ND. The source reports no disease progression or breast-cancer-specific death during seven years of follow-up for ND. This is not an unselected survival cohort or prospective clinical validation.
 
-## Inputs and existing processed outputs
+## Inputs
 
 `metadata/Seo_TNBC48_run_manifest.tsv` supplies public patient/sample IDs and accessions. Obtain paired reads from SRA; raw reads and Salmon output directories are not distributed here. `metadata/Program146_clinical_mapping.tsv` preserves all 146 members, of which 141 have measurable exact GENCODE v36 mappings. Five absent exact symbols are reported separately. No alias rescue or replacement was used.
 
-`results/SourceData_Seo_*.tsv` contains existing patient scores, all available formal model coefficients, the full mapping and nested-model comparison. These outputs were transferred without rerunning scoring or statistical models. Patient IDs are the source study's deidentified IDs, not personal identifiers.
+Processed patient scores, model coefficients and nested-model result tables are not included in this code repository. Patient IDs in the input manifest are the source study's deidentified IDs, not personal identifiers.
 
 ## Reproduction sequence
 
