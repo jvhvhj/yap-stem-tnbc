@@ -2,7 +2,7 @@
 
 ## About
 
-Analysis code and fixed gene definitions for a manuscript investigating a YAP–Stem transcriptional continuum in malignant epithelial cells from triple-negative breast cancer (TNBC).
+Analysis code and study-defined gene definitions for a manuscript investigating a YAP–Stem transcriptional continuum in malignant epithelial cells from triple-negative breast cancer (TNBC).
 
 **Code author and maintainer: Yuting Zhang**
 
@@ -12,8 +12,8 @@ This local source snapshot is **not yet a complete, end-to-end reproducible rele
 
 - YAP17 and Stem21 scores define the transcriptional axes.
 - Patient-level analyses characterize the recurrence and heterogeneity of their association.
-- Program146 is a score-independent, patient-consistent transcriptional program.
-- Independent single-cell and spatial datasets provide complementary tests of the fixed framework.
+- Program146 is a score-gene-excluded, patient-consistent transcriptional program.
+- Independent single-cell and spatial datasets provide complementary tests of the study-defined framework.
 - RNA-derived CNA callers provide malignant-identity sensitivity evidence without redefining the primary cell population.
 
 The study does not establish a universal pan-cancer mechanism, a clinical biomarker or a drug-response predictor.
@@ -37,6 +37,10 @@ See [analyses and related manuscript content](analysis/README.md).
 The [Program146 module](analysis/04_program146/README.md) now includes the recovered July 27 original, a separately identified August 8 regeneration source, and a portable derivation with input-only preflight. Program146 source provenance is resolved. Full numerical execution and the complete repository's input and environment dependencies remain unverified.
 
 ## Data availability
+
+The clinical extension uses Seo et al. (2025), NCBI SRA BioProject [PRJNA1256162](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1256162): 48 post-NAC residual-TNBC patients (D=34, ND=14), with a 45-patient operative HR-negative/HER2-negative sensitivity subset. This is an independent retrospective extreme-outcome cohort. Existing results support association with the early distant-recurrence phenotype after accounting for RCB class, not absolute recurrence-risk prediction or a validated clinical biomarker.
+
+The [clinical workflow](analysis/08_clinical_residual_tnbc/README.md) is SRA reads → Salmon → exact GENCODE v36 transcript-to-gene aggregation → Program146 scoring → clinical merge → Firth logistic regression. Existing processed clinical tables are supplied without rerunning models. Clinical software records are documented separately from single-cell/CNA environments.
 
 See [dataset access](docs/data_availability.md) and the [input manifest](config/input_manifest.tsv). Raw sequencing files, large expression matrices, Seurat objects, spatial image archives and native CNA matrices are not included. A public accession does not establish permission to redistribute every derived object or third-party resource.
 

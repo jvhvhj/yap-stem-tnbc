@@ -4,3 +4,4 @@ ARTEMIS	BioProject PRJNA1041570	patient	Analysis-specific eligibility; do not in
 Orthogonal single-cell transfer	GSE180286	sample/tissue measurements	Resolve sample-to-patient mapping; not multi-patient replication.
 Primary spatial cohort	GSE210616	22 patients; 43 sections	21 paired patients; Visium spots are mixed-cell tissue measurements.
 Independent spatial replication	BSW2; Zenodo 10.5281/zenodo.15247064	9 included patients	Do not describe excluded sAA9 as QC failure without source evidence. See docs/spatial_reproduction.md.
+Seo clinical cohort	PRJNA1256162	48 patients, D34 / ND14; operative HR-negative HER2-negative sensitivity 45	Fresh-frozen post-NAC residual tumor; independent retrospective extreme-outcome association, not unselected survival or prospective clinical validation

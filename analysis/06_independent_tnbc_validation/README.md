@@ -16,7 +16,7 @@ ARTEMIS; GSE180286. Patient identifiers and the original inclusion criteria are 
 
 See [the input manifest](../../config/input_manifest.tsv) and the file reads in each script. Large expression objects are not distributed in this repository. The historical input/output filename contracts have been retained inside an isolated analysis workspace; source folders in this repository are organized by scientific question.
 
-## Frozen definitions
+## study-defined definitions
 
 Use the exact [YAP17, Stem21 and Program146 files](../../config/signatures/README.md). No gene substitution, new state threshold or patient exclusion is introduced by this source snapshot. Each module retains its original normalization/standardization scope rather than imposing a new global formula.
 
@@ -27,12 +27,12 @@ The numbering below indexes files, not an automatically executable pipeline. Dep
 | Order | Script | Purpose | Main output |
 | --- | --- | --- | --- |
 | 1 | [export_cell_cycle_genes.R](scripts/export_cell_cycle_genes.R) | Export cell-cycle reference genes | Source-defined files |
-| 2 | [prepare_artemis_and_signatures.py](scripts/prepare_artemis_and_signatures.py) | Prepare ARTEMIS data and frozen signatures | Source-defined files |
+| 2 | [prepare_artemis_and_signatures.py](scripts/prepare_artemis_and_signatures.py) | Prepare ARTEMIS data and study-defined signatures | Source-defined files |
 | 3 | [artemis_validation.py](scripts/artemis_validation.py) | ARTEMIS validation analyses | Source-defined files |
-| 4 | [gse180286_closure.R](scripts/gse180286_closure.R) | GSE180286 closure analysis | Source-defined files |
+| 4 | [gse180286_closure.R](scripts/gse180286_closure.R) | GSE180286 completion analysis | Source-defined files |
 | 5 | [prepare_gse180286_transfer_sources.R](scripts/prepare_gse180286_transfer_sources.R) | Prepare GSE180286 transfer source tables | Source-defined files |
 | 6 | [orthogonal_program_transfer.R](scripts/orthogonal_program_transfer.R) | Figure 4 orthogonal program transfer | Source-defined files |
-| 7 | [figure5_data_closure.R](scripts/figure5_data_closure.R) | Figure 5 final data closure | Source-defined files |
+| 7 | [figure5_data_closure.R](scripts/figure5_data_closure.R) | Figure 5 final data completion | Source-defined files |
 | 8 | [render_figure5.R](scripts/render_figure5.R) | Figure 5 final render | Source-defined files |
 | 9 | [artemis_robustness_models.py](scripts/artemis_robustness_models.py) | Patient-level external scoring robustness | Source-defined files |
 

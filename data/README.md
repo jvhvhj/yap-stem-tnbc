@@ -1,6 +1,6 @@
 # Data
 
-This repository distributes **code and fixed gene definitions, not primary data**.
+This repository distributes **code and study-defined gene definitions, not primary data**.
 Raw sequencing files, expression matrices, Seurat/AnnData objects, spatial image
 archives and native CNA matrices are not included and must not be uploaded to
 GitHub. Large public datasets are not duplicated here — download them from the
@@ -58,7 +58,7 @@ analysis object can be rebuilt from the public download.
 | --- | --- | --- | --- |
 | GSE176078 (Wu) | No | Yes — [population extraction](../analysis/02_malignant_cell_and_cnv/scripts/extract_wu_malignant_population.R), [scoring](../analysis/03_yap_stem_continuum/scripts/score_yap17_stem21.R) and [state assignment](../analysis/03_yap_stem_continuum/scripts/derive_joint_axis_and_tertiles.R) are all scripted and verified | Reproducible from the atlas metadata given the source object |
 | ARTEMIS / PRJNA1041570 | No | Partly — the preparation script exists, but the download-to-prepared-object transformation is not fully recorded | Requires a recorded construction chain |
-| GSE180286 | No | Partly — a preparation script exists, but the sample-to-patient mapping is unresolved | Requires mapping closure |
+| GSE180286 | No | Partly — a preparation script exists, but the sample-to-patient mapping is unresolved | Requires mapping completion |
 | GSE210616 | No | Yes — layout and entry scripts are defined in [spatial reproduction](../docs/spatial_reproduction.md); the download-to-workspace assembly step is not yet scripted | Partially closed |
 | BSW2 | No | Yes — source, checksum, expected layout and entry script are defined in [spatial reproduction](../docs/spatial_reproduction.md) | Partially closed |
 | Chen / SCAN-B / METABRIC / LUAD / CRC / HNSCC | No | No | Out of code-release scope |

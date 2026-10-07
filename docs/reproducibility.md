@@ -2,7 +2,7 @@
 
 ## What this snapshot provides
 
-The repository contains recovered scripts arranged by scientific question, exact fixed signature files, historical Linux environment records, input descriptions, and static checks. Archived originals were not modified. Source and release checksums are recorded in `script_provenance.tsv`; this is not a substitute for reproducing results.
+The repository contains recovered scripts arranged by scientific question, exact study-defined signature files, historical Linux environment records, input descriptions, and static checks. Archived originals were not modified. Source and release checksums are recorded in `script_provenance.tsv`; this is not a substitute for reproducing results.
 
 The population-to-state derivation is public and verified. The chain a reader
 should follow is:
@@ -20,7 +20,7 @@ source atlas annotation
   -> downstream analyses
 ```
 
-Frozen validation outputs for the last two steps are kept in
+study-defined validation outputs for the last two steps are kept in
 `analysis/03_yap_stem_continuum/tables/`. The Figure 4E/F Hallmark chain is also
 closed: `analysis/05_functional_programs/scripts/build_hallmark_ranking.R` builds
 the ranking input from the saved score-excluded 17,597-gene Wald table, and the

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Gene-level spatial count matrices, coordinates, section/patient registries and fixed score definitions.
+Gene-level spatial count matrices, coordinates, section/patient registries and study-defined score definitions.
 
 ## Related manuscript content
 
@@ -16,7 +16,7 @@ GSE210616; BSW2. Patient identifiers and the original inclusion criteria are pre
 
 See [the input manifest](../../config/input_manifest.tsv) and the file reads in each script. Large expression objects are not distributed in this repository. The historical input/output filename contracts have been retained inside an isolated analysis workspace; source folders in this repository are organized by scientific question.
 
-## Frozen definitions
+## study-defined definitions
 
 Use the exact [YAP17, Stem21 and Program146 files](../../config/signatures/README.md). No gene substitution, new state threshold or patient exclusion is introduced by this source snapshot. Each module retains its original normalization/standardization scope rather than imposing a new global formula.
 
@@ -29,7 +29,7 @@ The numbering below indexes files, not an automatically executable pipeline. Dep
 | 1 | [compute_spatial_scores_worker.R](scripts/compute_spatial_scores_worker.R) | Compute section-level YAP-Stem and Program146 spot scores | Source-defined files |
 | 2 | [assemble_spatial_coupling_results.R](scripts/assemble_spatial_coupling_results.R) | Assemble patient-recurrent spatial coupling results | Source-defined files |
 | 3 | [compute_spatial_enrichment_and_neighborhood_statistics.R](scripts/compute_spatial_enrichment_and_neighborhood_statistics.R) | Compute cohort recurrence and Lee L neighborhood statistics | Source-defined files |
-| 4 | [score_spatial_modules.R](scripts/score_spatial_modules.R) | Score predefined spatial functional modules | Source-defined files |
+| 4 | [score_spatial_modules.R](scripts/score_spatial_modules.R) | Score study-defined spatial functional modules | Source-defined files |
 | 5 | [assemble_spatial_module_results.R](scripts/assemble_spatial_module_results.R) | Assemble patient-level spatial module results | Source-defined files |
 | 6 | [bsw2_spatial_replication.R](scripts/bsw2_spatial_replication.R) | Independent BSW2 spatial replication | Source-defined files |
 | 7 | [render_spatial_robustness_panels.py](scripts/render_spatial_robustness_panels.py) | Figure 6B/C visual render | Source-defined files |

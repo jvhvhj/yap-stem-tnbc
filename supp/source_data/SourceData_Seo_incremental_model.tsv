@@ -1,0 +1,2 @@
+Reduced_model	Full_model	Patients_n	Chi_square	df	P	Method
+D_event ~ RCB_class	D_event ~ RCB_class + Program146_1SD	48	17.95559	1	2.261198e-05	"Nested penalized likelihood-ratio test; anova.logistf(..., method=""nested"")"

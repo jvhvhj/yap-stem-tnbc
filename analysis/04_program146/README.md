@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Program146 is a score-independent transcriptional program associated with the YAP–Stem High state in Wu TNBC malignant epithelial cells. Original-source provenance is resolved. The portable implementation is supplied with static checks; its full biological execution has not been performed.
+Program146 is a score-gene-excluded transcriptional program associated with the YAP–Stem High state in Wu TNBC malignant epithelial cells. Original-source provenance is resolved. The portable implementation is supplied with static checks; its full biological execution has not been performed.
 
 ## Discovery cohort
 
@@ -77,7 +77,7 @@ Rscript analysis/04_program146/scripts/01_derive_program146.R \
 
 The explicit additional input is the original High–Low table `0713_score_independent_rebuild/tables/Fig4_DEG_score_independent.tsv`, containing `gene` and `adj.P.Val`. It is retained because the original reconciliation builds its gene union and historical-142 comparison from this table. This historical set does not determine the High–Other criteria. Retaining it avoids rewriting the original reconciliation.
 
-`--dry-run` checks small input tables, fixed definitions, file existence and output safety. It does not load the Seurat object, import analysis packages, create output files, aggregate counts or fit models. `--help` needs no inputs. After environment/input review and authorization, removing `--dry-run` executes the derivation in the isolated directory. This full run has not been validated during packaging.
+`--dry-run` checks small input tables, study-defined definitions, file existence and output safety. It does not load the Seurat object, import analysis packages, create output files, aggregate counts or fit models. `--help` needs no inputs. After environment/input review and authorization, removing `--dry-run` executes the derivation in the isolated directory. This full run has not been validated during packaging.
 
 The scientific runtime requires Seurat, Matrix, edgeR and DESeq2. [Historical environment reconstruction](../../environment/README.md) remains incomplete; no current package installation is presented as an exact historical environment.
 
@@ -90,7 +90,7 @@ On Windows, use a valid native UTF-8 locale for non-ASCII paths. A shell-inherit
 | `pseudobulk_counts.tsv.gz` | Gene identifiers plus 16 raw-count columns |
 | `pseudobulk_samples.tsv` | 16 patient/state rows, cell counts and library summaries |
 | `pseudobulk_design.tsv` | Original design matrix |
-| `score_gene_exclusion.tsv` | One audit row per score gene, 38 rows |
+| `score_gene_exclusion.tsv` | One assessment row per score gene, 38 rows |
 | `score_gene_exclusion_summary.tsv` | Original five-stage exclusion summary |
 | `Program146_DE_all.tsv` | Full DE table, including primary unshrunk and original display-shrunken LFC |
 | `Program146_DE_FDR05.tsv` | All FDR < 0.05 genes |

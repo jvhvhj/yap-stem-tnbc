@@ -1,0 +1,14 @@
+Field	Value	Source_URL
+Study	Seo et al., 2025	https://doi.org/10.1016/j.xcrm.2025.102164
+BioProject	PRJNA1256162	https://doi.org/10.1016/j.xcrm.2025.102164
+Primary patients	48	https://doi.org/10.1016/j.xcrm.2025.102164
+D patients	34	https://doi.org/10.1016/j.xcrm.2025.102164
+ND patients	14	https://doi.org/10.1016/j.xcrm.2025.102164
+Neo subtype	HR−HER2−	https://doi.org/10.1016/j.xcrm.2025.102164
+RCB classes	II and III	https://doi.org/10.1016/j.xcrm.2025.102164
+D definition	Residual disease after NAC; distant metastasis within 2 years of curative surgery	https://doi.org/10.1016/j.xcrm.2025.102164
+ND definition	Residual disease after NAC; no recurrence. The source cohort reported no disease progression or breast-cancer-specific death during 7 years of follow-up	https://doi.org/10.1016/j.xcrm.2025.102164
+Operative HR−HER2− sensitivity patients	45	https://doi.org/10.1016/j.xcrm.2025.102164
+Tissue	Fresh-study-defined residual tumor collected at curative surgery after NAC	https://doi.org/10.1016/j.xcrm.2025.102164
+Design	Retrospective extreme-outcome cohort; not an unselected survival cohort or prospective clinical validation	https://doi.org/10.1016/j.xcrm.2025.102164
+Clinical outcome coding	D_event: D=1; ND=0. RCB reference: II	https://doi.org/10.1016/j.xcrm.2025.102164

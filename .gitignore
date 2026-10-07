@@ -29,6 +29,8 @@ Thumbs.db
 *.o
 *.Rcheck/
 results/
+!analysis/08_clinical_residual_tnbc/results/
+!analysis/08_clinical_residual_tnbc/results/SourceData_Seo_*.tsv
 tmp/
 temp/
 cache/

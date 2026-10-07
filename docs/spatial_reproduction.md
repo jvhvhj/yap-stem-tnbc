@@ -11,10 +11,10 @@ The spatial module has two routes:
 | A | GSE210616 | Primary spatial recurrence cohort (22 patients / 43 sections) |
 | B | BSW2 (Zenodo) | Independent spatial replication cohort (9 patients) |
 
-Both routes consume the same frozen definitions and share the scoring rule; they
+Both routes consume the same study-defined definitions and share the scoring rule; they
 differ in source, normalisation implementation and coordinate universe.
 
-Frozen inputs for both routes:
+study-defined inputs for both routes:
 
 - `config/signatures/YAP17.tsv` (17 genes), `config/signatures/Stem21.tsv` (21 genes)
 - `config/signatures/Program146.tsv` (146 genes)
@@ -42,7 +42,7 @@ original authors for privacy reasons.
 | Processing | Space Ranger 1.1.0, GRCh38 |
 | Spot denominator | 56,567 in-tissue spots over the 43 sections |
 
-The authoritative section/patient registries used by the scripts are the audited
+The documented section/patient registries used by the scripts are the documented
 project registries, not a re-derivation of the paper's sample table.
 
 ### Expected prepared layout
@@ -64,10 +64,10 @@ Working directory = an isolated reproduction workspace (not the repository root)
 - The worker asserts the H5 spot count equals the registry's
   `n_expression_spots`, so a mismatched download fails loudly rather than
   silently subsetting.
-- `score_gene_list.tsv` and `146_gene_program.txt` carry the frozen memberships
+- `score_gene_list.tsv` and `146_gene_program.txt` carry the study-defined memberships
   listed above; the worker re-asserts 17 / 21 / 146 and the zero-overlap rule.
 - The ESTIMATE-derived spot covariates (`Q3_ESTIMATE_spot_scores.tsv`) are used
-  only as a prespecified adjustment variable. Their code origin and permission
+  only as a study-defined adjustment variable. Their code origin and permission
   are still under review — see the open items below.
 
 Environment variable `SPATIAL_WORK_ROOT` may be used to point at this workspace;
@@ -95,7 +95,7 @@ its own upstream before running.
    ESTIMATE covariates, and produces the patient- and section-level association
    tables.
 3. `compute_spatial_enrichment_and_neighborhood_statistics.R` — cohort recurrence
-   and Lee L neighbourhood statistics on the prespecified first-order Visium graph.
+   and Lee L neighbourhood statistics on the study-defined first-order Visium graph.
 4. `score_spatial_modules.R` then `assemble_spatial_module_results.R` — the
    patient-by-functional-module association table.
 
@@ -138,7 +138,7 @@ Figure6G0_BSW2_archive_audit/audit/extracted_objects/10x.visium/<section_id>/out
 ```
 
 `<section_id>` is the archive member name and equals the patient identifier;
-this cohort contributes one section per patient. The registry is the audited
+this cohort contributes one section per patient. The registry is the documented
 section table and is required — the script reads it before touching any H5.
 If the extracted tree is placed elsewhere, use `BSW2_WORK_ROOT`.
 

@@ -10,6 +10,9 @@
 | Hallmark gene sets | [MSigDB](https://www.gsea-msigdb.org/gsea/msigdb) | `h.all.v2024.Hs.symbols.gmt`; use the recorded resource version | External pathway profiling |
 | Gene nomenclature | [HGNC](https://www.genenames.org/download/archive/) | Recorded HGNC symbol/alias table | Approved unambiguous mappings only |
 | Genomic order | [UCSC hg38 refGene](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/) | Recorded gene-order file and generation provenance | inferCNV |
+| Seo residual-TNBC clinical cohort | NCBI SRA BioProject [PRJNA1256162](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1256162); [Seo et al. 2025](https://doi.org/10.1016/j.xcrm.2025.102164) | 48 deidentified patients, 48 fresh-frozen post-NAC residual-tumor samples, 48 paired-end WTS runs; Neo HR-negative/HER2-negative, D34 / ND14; operative-subtype sensitivity n45 | `analysis/08_clinical_residual_tnbc/` |
+
+The Seo analysis addresses clinical association in a retrospective extreme-outcome sample, not prospective validation or prediction in an unselected survival cohort. Small processed patient-score, model, mapping and incremental-comparison tables are included in `supp/source_data/`; raw reads and raw Salmon directories are not included. Semantic file names intentionally do not assign new figure-panel numbers.
 
 The detailed existing filenames are in `config/input_manifest.tsv`. Large data and restricted/third-party resource files are not redistributed here. Accession pages are access pointers, not proof that the prepared analysis objects are identical to public files.
 

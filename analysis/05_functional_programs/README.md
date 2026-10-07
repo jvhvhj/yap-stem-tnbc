@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Fixed score-independent module definitions, existing module scores and external Hallmark resources.
+study-defined score-gene-excluded module definitions, existing module scores and external Hallmark resources.
 
 ## Related manuscript content
 
@@ -16,7 +16,7 @@ GSE176078. Patient identifiers and the original inclusion criteria are preserved
 
 See [the input manifest](../../config/input_manifest.tsv) and the file reads in each script. Large expression objects are not distributed in this repository. The historical input/output filename contracts have been retained inside an isolated analysis workspace; source folders in this repository are organized by scientific question.
 
-## Frozen definitions
+## study-defined definitions
 
 Use the exact [YAP17, Stem21 and Program146 files](../../config/signatures/README.md). No gene substitution, new state threshold or patient exclusion is introduced by this source snapshot. Each module retains its original normalization/standardization scope rather than imposing a new global formula.
 
@@ -27,14 +27,14 @@ The numbering below indexes files, not an automatically executable pipeline. Dep
 | Order | Script | Purpose | Main output |
 | --- | --- | --- | --- |
 | 0 | [build_hallmark_ranking.R](scripts/build_hallmark_ranking.R) | Figure 4E/F GSEA ranking input from the score-excluded Wald table | `Figure4_E_GSEA_v2_ranking.tsv` |
-| 1 | [score_independent_reanalysis.R](scripts/score_independent_reanalysis.R) | Score-independent discovery reanalysis | Source-defined files |
-| 2 | [finalize_companion_tables.R](scripts/finalize_companion_tables.R) | Finalize score-independent companion tables | Source-defined files |
+| 1 | [score_independent_reanalysis.R](scripts/score_independent_reanalysis.R) | score-gene-excluded discovery reanalysis | Source-defined files |
+| 2 | [finalize_companion_tables.R](scripts/finalize_companion_tables.R) | Finalize score-gene-excluded companion tables | Source-defined files |
 | 3 | [build_program_landscape_sources.py](scripts/build_program_landscape_sources.py) | Build program-landscape and lineage source tables | Source-defined files |
 | 4 | [lineage_and_external_context.py](scripts/lineage_and_external_context.py) | Lineage and external-cohort context summaries | Source-defined files |
-| 5 | [hallmark_gsea_and_leading_edge.R](scripts/hallmark_gsea_and_leading_edge.R) | Hallmark GSEA and leading-edge closure | Source-defined files |
+| 5 | [hallmark_gsea_and_leading_edge.R](scripts/hallmark_gsea_and_leading_edge.R) | Hallmark GSEA and leading-edge completion | Source-defined files |
 | 6 | [functional_evidence_landscape.R](scripts/functional_evidence_landscape.R) | Figure 4 integrated patient functional evidence | Source-defined files |
 | 7 | [leading_edge_architecture.R](scripts/leading_edge_architecture.R) | Figure 4 leading-edge architecture | Source-defined files |
-| 8 | [external_hallmark_analysis.R](scripts/external_hallmark_analysis.R) | Predefined Hallmark enrichment and patient-level recurrence | Source-defined files |
+| 8 | [external_hallmark_analysis.R](scripts/external_hallmark_analysis.R) | study-defined Hallmark enrichment and patient-level recurrence | Source-defined files |
 
 ### Figure 4E/F chain (previously unresolved)
 
@@ -54,12 +54,12 @@ score-excluded 17,597-gene DESeq2 Wald table        (Fig. 3 I effect-consistency
 ```
 
 All 38 YAP17/Stem21 genes were removed before gene filtering and testing, so the
-testable universe is score-independent. The script asserts the
+testable universe is score-gene-excluded. The script asserts the
 `score_definition_genes_excluded_before_testing` flag is TRUE for every retained
 row rather than trusting it, and refuses to run if the source table has anything
 other than 17,597 genes.
 
-Verified against the saved result: 17,597 genes, all flagged score-independent;
+Verified against the saved result: 17,597 genes, all flagged score-gene-excluded;
 `ranking_statistic` identical to `Wald_stat` (maximum absolute difference 0); 50
 Hallmark pathways in the saved enrichment table. The recovered public ranking
 reproduces the saved ranking exactly up to the internal order of one tied pair

@@ -2,9 +2,9 @@
 
 Each entry names the script a reader should open first and the manuscript content
 it supports. Scripts live in the module directories; each module README gives the
-inputs, the frozen definitions and the current reproduction boundary.
+inputs, the study-defined definitions and the current reproduction boundary.
 
-Machine-readable detail — scientific question, dataset, authoritative script and
+Machine-readable detail — scientific question, dataset, documented script and
 status per unit of analysis — is in [`docs/figure_code_map.tsv`](../docs/figure_code_map.tsv).
 
 | Analysis | Description | Related figure(s) | Code entry |
@@ -16,7 +16,7 @@ status per unit of analysis — is in [`docs/figure_code_map.tsv`](../docs/figur
 | Multi-caller integration | Caller agreement, patient-unit sensitivity, CNA-burden restriction subsets | Fig. 2; Suppl. Fig. S1 | [`02_malignant_cell_and_cnv/scripts/integrate_caller_results.py`](02_malignant_cell_and_cnv/scripts/integrate_caller_results.py) |
 | YAP17 / Stem21 scoring | Unweighted mean of the measurable signature genes in the log-normalised RNA data layer | Fig. 3 | [`03_yap_stem_continuum/scripts/score_yap17_stem21.R`](03_yap_stem_continuum/scripts/score_yap17_stem21.R) |
 | Joint axis and state assignment | Joint = sum of the two component z scores; equal thirds define Low / Intermediate / High | Fig. 3 | [`03_yap_stem_continuum/scripts/derive_joint_axis_and_tertiles.R`](03_yap_stem_continuum/scripts/derive_joint_axis_and_tertiles.R) |
-| State-assignment validation | Reproduce the frozen Joint column and state labels; report every equal-thirds rule tested | Fig. 3 | [`03_yap_stem_continuum/scripts/validate_joint_state_reproduction.R`](03_yap_stem_continuum/scripts/validate_joint_state_reproduction.R) |
+| State-assignment validation | Reproduce the study-defined Joint column and state labels; report every equal-thirds rule tested | Fig. 3 | [`03_yap_stem_continuum/scripts/validate_joint_state_reproduction.R`](03_yap_stem_continuum/scripts/validate_joint_state_reproduction.R) |
 | Patient-resolved association | Within-patient Spearman correlation and bootstrap intervals | Fig. 3; Suppl. Fig. S2 | [`03_yap_stem_continuum/scripts/wu_robustness_models.R`](03_yap_stem_continuum/scripts/wu_robustness_models.R) |
 | State-definition concordance | Agreement between pooled-, within-patient- and patient-standardised-tertile definitions | Fig. 3 | [`03_yap_stem_continuum/scripts/state_definition_concordance_panel.R`](03_yap_stem_continuum/scripts/state_definition_concordance_panel.R) |
 | Program146 derivation | Patient-blocked High-versus-Other pseudobulk DE; unshrunk log2FC ≥ 0.5 and ≥ 6/8 patient direction over 17,597 score-excluded genes | Fig. 4A/B | [`04_program146/scripts/01_derive_program146.R`](04_program146/scripts/01_derive_program146.R) |
@@ -30,12 +30,16 @@ status per unit of analysis — is in [`docs/figure_code_map.tsv`](../docs/figur
 | Cancer-state robustness | State occupancy versus within-state coupling; leave-one-state-out influence | Fig. 5; Suppl. Fig. S4 | [`supplementary/scripts/render_s3c_state_sensitivity.R`](supplementary/scripts/render_s3c_state_sensitivity.R) |
 | GSE210616 spatial recurrence | 22 patients / 43 sections; spot scores, purity- and depth-adjusted patient recurrence, neighbourhood co-organization | Fig. 6A–F | [`07_spatial_validation/scripts/compute_spatial_scores_worker.R`](07_spatial_validation/scripts/compute_spatial_scores_worker.R) — see [spatial reproduction](../docs/spatial_reproduction.md) |
 | BSW2 independent replication | Nine-patient Visium replication under a separate normalisation implementation | Fig. 6F/G | [`07_spatial_validation/scripts/bsw2_spatial_replication.R`](07_spatial_validation/scripts/bsw2_spatial_replication.R) — see [spatial reproduction](../docs/spatial_reproduction.md) |
-| Matched-null calibration | Observed versus gene-number/expression/detection-matched random signatures | Suppl. Fig. S2B | [`supplementary/scripts/render_s2b_matched_null.R`](supplementary/scripts/render_s2b_matched_null.R) — renders from a frozen null table; the generator is not included |
-| Scoring-method sensitivity | Five predefined scoring approaches across cohorts | Suppl. Fig. S2A | [`supplementary/scripts/render_s2a_patient_robustness.R`](supplementary/scripts/render_s2a_patient_robustness.R) |
+| Matched-null calibration | Observed versus gene-number/expression/detection-matched random signatures | Suppl. Fig. S2B | [`supplementary/scripts/render_s2b_matched_null.R`](supplementary/scripts/render_s2b_matched_null.R) — renders from a study-defined null table; the generator is not included |
+| Scoring-method sensitivity | Five study-defined scoring approaches across cohorts | Suppl. Fig. S2A | [`supplementary/scripts/render_s2a_patient_robustness.R`](supplementary/scripts/render_s2a_patient_robustness.R) |
 | Effect-size and shrinkage sensitivity | Threshold and apeglm-shrinkage sensitivity of Program146 membership | Suppl. Fig. S2D | [`supplementary/scripts/effect_size_and_shrinkage_sensitivity.R`](supplementary/scripts/effect_size_and_shrinkage_sensitivity.R) |
 | Hippo/YAP–TNBC schematic | Conceptual overview of Hippo/YAP–TAZ signalling and its TNBC context | Fig. 1 | Not applicable — conceptual figure, no analysis code |
 
 ## Derivation chain
+
+## Clinical extension
+
+[`08_clinical_residual_tnbc/`](08_clinical_residual_tnbc/README.md) contains the 48-run public Seo manifest, 141/146 exact-symbol mapping, processed clinical results and portable quantification/scoring/Firth scripts. It does not assign a new main or supplementary figure number.
 
 The population-to-state chain is public and verified end to end:
 
@@ -66,7 +70,7 @@ See [the reproduction guide](../docs/reproducibility.md) before running anything
 
 See [`data/README.md`](../data/README.md) and [`config/datasets.tsv`](../config/datasets.tsv).
 
-### Fixed definitions
+### study-defined definitions
 
 [`config/signatures/`](../config/signatures/README.md) holds YAP17, Stem21 and
 Program146. These are definitions, not claims that every external dataset

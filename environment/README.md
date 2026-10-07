@@ -10,6 +10,10 @@ CopyKAT's exact successful-run package version has not been established from a p
 
 ## Dependency installation
 
+## Clinical environments
+
+See [clinical analysis](clinical_analysis.md) for Salmon 1.10.3 / GRCh38 / GENCODE v36 and the separately documented R 4.3.3 / logistf 1.26.1 model environment. These records do not replace the CNA environments or claim a single end-to-end environment.
+
 The dependency list in `script_package_dependencies.tsv` is extracted from source imports. It is not an installation lockfile. Missing versions are not filled with currently available releases.
 
 The project was not shown to have been developed under `renv`; no reconstructed lockfile is presented as an original one. Python environment reconstruction remains incomplete. `requirements.txt` documents this rather than pretending that an unpinned install recreates the historical environment.

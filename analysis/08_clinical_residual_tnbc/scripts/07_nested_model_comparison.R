@@ -1,0 +1,8 @@
+args <- commandArgs(trailingOnly=TRUE)
+if (length(args)!=2L) stop('Usage: Rscript 07_nested_model_comparison.R clinical_models.rds output.txt')
+suppressPackageStartupMessages(library(logistf))
+if (packageVersion('logistf')!=numeric_version('1.26.1') || getRversion()!=numeric_version('4.3.3')) stop('Use documented clinical model environment')
+x <- readRDS(args[1]);stopifnot(nrow(x$data)==48L)
+reduced <- logistf(D_event ~ RCB_class,data=x$data,pl=TRUE)
+test <- anova(x$primary,reduced,method='nested')
+capture.output(print(test),file=args[2])
